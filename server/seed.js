@@ -35,57 +35,86 @@ async function seedDatabase() {
       console.log(`✅ Inserted category: ${category.name} (id: ${id})`);
     }
 
-    // Insert menu items
+    // Insert menu items with proper image paths
     const menuItems = [
+      // Main Course
       {
-        name: 'Paneer Tikka',
-        description: 'Spicy grilled paneer cubes',
-        price: 199.99,
-        image_url: 'https://i.imgur.com/1.jpg',
+        name: 'Paneer Tikka Masala',
+        description: 'Grilled cottage cheese cubes in rich tomato and cream gravy',
+        price: 249.99,
+        image_url: '/images/paneertikka.png',
         category_id: categoryIds[0],
-        is_vegetarian: true,
-        is_vegan: false,
-        is_gluten_free: false
-      },
-      {
-        name: 'Butter Chicken',
-        description: 'Creamy chicken curry',
-        price: 299.99,
-        image_url: 'https://i.imgur.com/2.jpg',
-        category_id: categoryIds[0],
-        is_vegetarian: false,
-        is_vegan: false,
-        is_gluten_free: false
-      },
-      {
-        name: 'Mango Lassi',
-        description: 'Refreshing mango yogurt drink',
-        price: 49.5,
-        image_url: 'https://i.imgur.com/4.jpg',
-        category_id: categoryIds[4],
         is_vegetarian: true,
         is_vegan: false,
         is_gluten_free: true
       },
       {
+        name: 'Butter Chicken',
+        description: 'Tender chicken in a creamy tomato and butter sauce',
+        price: 299.99,
+        image_url: '/images/butter-chicken.jpg',
+        category_id: categoryIds[0],
+        is_vegetarian: false,
+        is_vegan: false,
+        is_gluten_free: true
+      },
+      {
+        name: 'Dal Makhani',
+        description: 'Creamy black lentils slow-cooked with butter and spices',
+        price: 199.99,
+        image_url: '/images/dal-makhani.jpg',
+        category_id: categoryIds[0],
+        is_vegetarian: true,
+        is_vegan: false,
+        is_gluten_free: true
+      },
+      
+      // Starters
+      {
+        name: 'Samosa',
+        description: 'Crispy pastry filled with spiced potatoes and peas',
+        price: 59.99,
+        image_url: '/images/samosa.jpg',
+        category_id: categoryIds[1],
+        is_vegetarian: true,
+        is_vegan: true,
+        is_gluten_free: false
+      },
+      
+      // Breads
+      {
+        name: 'Garlic Naan',
+        description: 'Leavened bread with garlic and butter',
+        price: 49.99,
+        image_url: '/images/garlic-naan.jpg',
+        category_id: categoryIds[2],
+        is_vegetarian: true,
+        is_vegan: false,
+        is_gluten_free: false
+      },
+      
+      // Desserts
+      {
         name: 'Gulab Jamun',
-        description: 'Sweet Indian dessert',
-        price: 79.0,
-        image_url: 'https://i.imgur.com/3.jpg',
+        description: 'Sweet milk dumplings in sugar syrup',
+        price: 99.99,
+        image_url: '/images/gulab-jamun.jpg',
         category_id: categoryIds[3],
         is_vegetarian: true,
         is_vegan: false,
         is_gluten_free: false
       },
+      
+      // Beverages
       {
-        name: 'Shev Tomato Bhaji',
-        description: 'A spicy Maharashtrian dish made with crispy shev and tangy tomato gravy',
-        price: 119.0,
-        image_url: 'https://i.imgur.com/5.jpg',
-        category_id: categoryIds[0],
+        name: 'Mango Lassi',
+        description: 'Refreshing yogurt drink with mango',
+        price: 79.99,
+        image_url: '/images/mango-lassi.jpg',
+        category_id: categoryIds[4],
         is_vegetarian: true,
         is_vegan: false,
-        is_gluten_free: false
+        is_gluten_free: true
       }
     ];
 
