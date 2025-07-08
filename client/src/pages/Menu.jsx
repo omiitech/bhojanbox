@@ -10,7 +10,19 @@ const Menu = () => {
     const fetchMenu = async () => {
       try {
         const response = await menuAPI.getMenuItems();
-        setItems(response.data);
+        // Map the API response to match the expected format
+        const formattedItems = response.data.map(item => ({
+          _id: item.id,
+          name: item.name,
+          description: item.description,
+          price: parseFloat(item.price),
+          image: item.image_url || 'https://via.placeholder.com/300x200?text=Food+Image',
+          category: item.category_name,
+          isVegetarian: item.is_vegetarian,
+          isVegan: item.is_vegan,
+          isGlutenFree: item.is_gluten_free
+        }));
+        setItems(formattedItems);
       } catch (error) {
         console.error('Error fetching menu items:', error);
       }

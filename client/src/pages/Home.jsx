@@ -189,13 +189,16 @@ const Home = () => {
               animate="visible"
               className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             >
-              {filteredItems.map((item) => (
-                <motion.div key={item._id} variants={itemVariants}>
-                  <FoodItemCard item={item} />
-                </motion.div>
-              ))}
+            {filteredItems.map((item) => (
+  <motion.div key={item._id || item.id} variants={itemVariants}>
+    <FoodItemCard item={item} />
+  </motion.div>
+))}
+
             </motion.div>
-          ) : (
+          ) : 
+          
+          (
             <div className="text-center py-12">
               <svg
                 className="mx-auto h-12 w-12 text-gray-400"

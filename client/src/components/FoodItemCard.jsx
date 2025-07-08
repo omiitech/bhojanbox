@@ -39,7 +39,7 @@ const FoodItemCard = ({ item }) => {
     >
       <div className="relative">
         <img 
-          src={item.image} 
+          src={item.image || 'https://via.placeholder.com/300x200?text=Food+Image'} 
           alt={item.name} 
           className="w-full h-48 object-cover"
           onError={(e) => {
@@ -74,7 +74,8 @@ const FoodItemCard = ({ item }) => {
         <div className="flex justify-between items-start">
           <h3 className="text-lg font-semibold text-gray-900 line-clamp-1">{item.name}</h3>
           <span className="bg-amber-100 text-amber-800 text-sm font-medium px-2.5 py-0.5 rounded-full whitespace-nowrap ml-2">
-            ₹{item.price.toFixed(2)}
+
+Rs{item.price ? Number(item.price).toFixed(2) : '0.00'}
           </span>
         </div>
         

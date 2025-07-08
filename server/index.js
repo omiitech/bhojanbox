@@ -15,18 +15,18 @@ console.log('Host:', process.env.DB_HOST);
 
 // Configure CORS for frontend development
 const corsOptions = {
-  origin: [
-    'http://localhost:3000',      // Default React port
-    'http://localhost:5173',      // Default Vite port
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:5173'
-  ],
+  origin: '*', // Allow all origins for development
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
   optionsSuccessStatus: 200
 };
 
 // Apply CORS middleware
 app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const result = await pool.query(`
       SELECT m.id, m.name, m.description, m.price, m.image_url, c.name AS category
       FROM menu_items m
-      JOIN categories c ON m.category_id = c.id
+      JOIN menu_categories c ON m.category_id = c.id
     `);
     res.json(result.rows);
   } catch (err) {
