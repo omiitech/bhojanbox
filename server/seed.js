@@ -42,7 +42,7 @@ async function seedDatabase() {
         name: 'Paneer Tikka Masala',
         description: 'Grilled cottage cheese cubes in rich tomato and cream gravy',
         price: 249.99,
-        image_url: '/images/paneertikka.png',
+        image_url: '/images/butter-chicken.jpg',
         category_id: categoryIds[0],
         is_vegetarian: true,
         is_vegan: false,
